@@ -1,40 +1,76 @@
-import React, { useEffect, useState } from 'react'
-import './banner.css'
-import axios from 'axios'
-import Recocard from './Recocard'
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import "./banner.css";
+import axios from "axios";
+import Recocard from "./Recocard";
+import useRecommend from "../../Hooks/useRecommend";
 
 const Banner = () => {
-    const [recoShows,setRecoShows] = useState({})
-    const [loading,setLoading] = useState(false)
+  // const [recoShows, setRecoShows] = useState({});
+  // const [loading, setLoading] = useState(false);
 
-    useEffect(()=>{
-        axios.get('https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&type=reco&page=5').then((response)=>{
-            setRecoShows(response.data)
-            console.log(response.data)
-        }).catch((error)=>{
-            console.error('Error occured in recommended shows',error)
-        })
-    },[])
+  const [pageNo,setPageNo] = useState(1)
+  const {recoShows,loading,error} = useRecommend(pageNo)
+
+  const observer = useRef();
+
+  const lastShowRef = useCallback(
+    (node) => {
+      if (loading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((enteries) => {
+        if (enteries[0].isIntersecting) {
+            setPageNo(prev=>prev+1)
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [loading]
+  );
+  useEffect(()=>{
+    console.log('in reco shows')
+    console.log(recoShows)
+
+  },[recoShows])
+
+  // const fetchData=()=>{
+  //   console.log(recoShows)
+  //   console.log(recoShows.events)
+  //   }
   return (
-    <div className='bannerContainer'>
-        <div className="backgroundImg">
-            <div className="heading">Discover Exciting Events Happening Near You - Stay Tuned for Updates</div>
-            <div className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ipsa aperiam aut porro id dolore! Maxime, magni quam! Necessitatibus veniam impedit accusantium magnam molestias perferendis.</div>
+    <div className="bannerContainer">
+      <div className="backgroundImg">
+        <div className="heading">
+          Discover Exciting Events Happening Near You - Stay Tuned for Updates
         </div>
-        <div className="recommendation">
-            <div className="heading">Recommended Shows ➡</div>
-            <div className="shows">
-                {
-                    recoShows?.events?.map((show,id)=>{
-                        return(
-                            <Recocard key={id} show={show} />
-                        )
-                    })
-                }
-            </div>
+        <div className="desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ipsa
+          aperiam aut porro id dolore! Maxime, magni quam! Necessitatibus veniam
+          impedit accusantium magnam molestias perferendis.
         </div>
+      </div>
+      <div className="recommendation">
+        <div className="heading">Recommended Shows ➡</div>
+        <div className="shows">
+          {recoShows?.map((show, id) => {
+            if (recoShows.length === id + 1) {
+              return (
+                <Recocard
+                  lastShowRef={lastShowRef}
+                  isLast={true}
+                  key={id}
+                  show={show}
+                />
+              );
+            } else {
+              return <Recocard isLast={false} key={id} show={show} />;
+            }
+          })
+        }
+        </div>
+        {loading?'loading':''}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;

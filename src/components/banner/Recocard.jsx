@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { FaLocationDot } from "react-icons/fa6";
 
-const Recocard = ({show}) => {
-    console.log('in reco card')
+const Recocard = (props) => {
+    const {show,isLast} = props
 
     const [imgLink,setImgLink]= useState('')
     
@@ -10,7 +10,7 @@ const Recocard = ({show}) => {
         const pattern = /\/d\/(.*?)\/view/;
         const match = show.imgUrl.match(pattern);
         if (match) {
-            console.log(match[1])
+            // console.log(match[1])
             setImgLink(match[1])
         //   return match[1];
         } else {
@@ -18,16 +18,16 @@ const Recocard = ({show}) => {
         }
       }
       setTimeout(()=>{
-        console.log('https://drive.google.com/uc? export=view&id='+imgLink)
+        // console.log('https://drive.google.com/uc? export=view&id='+imgLink)
       },[200])
     useEffect(()=>{
         extractImageId()
     },[])
     // console.log(show)
   return (
-    <div className='recoCardContainer'>
+    <div ref={props.lastShowRef} className='recoCardContainer'>
         {/* <div className="cardImage"><img src={show.imgUrl} alt="" /></div> */}
-        <img src={imgLink.length>0?'https://drive.google.com/thumbnail?id='+imgLink:''} alt="" />{console.log(show.imgUrl)}
+        <img src={imgLink.length>0?'https://drive.google.com/thumbnail?id='+imgLink:''} alt="" />
         <div className="cardDetails">
             {/* <div className="eventName">a</div>
             <div className="eventDate">b</div>
