@@ -6,7 +6,7 @@ import { offers } from '../data/data';
 const Bottombar = () => {
   return (
     <div className="bottomBarContainer">
-      <div class="location select-box">
+      <div className="location select-box">
         <FaLocationDot />
         <select name="" id="">
           <option value="">Mumbai,India</option>
@@ -19,7 +19,7 @@ const Bottombar = () => {
         {
           offers.map((elem,id)=>{
             return(
-              <div key={`${elem}_${id}`}>{elem}</div>
+              <div key={`${elem}_${id}`} className="offer">{elem}</div>
             )
           })
         }

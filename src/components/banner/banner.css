@@ -1,0 +1,107 @@
+.bannerContainer .backgroundImg{
+    background-image: url(../../assets/Banner.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 250px);
+    color: white;
+    text-align: center;
+}
+
+.bannerContainer .backgroundImg .heading{
+    padding: 5% 5% 0 5%;
+    font-size: 450%;
+}
+
+.bannerContainer .backgroundImg .desc{
+    padding: 2% 5% 0 5%;
+}
+
+.bannerContainer .recommendation{
+    color: white;
+    position: relative;
+    top: -100px;
+    padding-left: 7%;
+}
+
+.bannerContainer .recommendation .shows{
+    display: flex;
+    gap: 2rem;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+}
+
+.bannerContainer .recommendation .shows::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Reco Card Css */
+
+.recoCardContainer{
+    margin-top: 2rem;
+    min-height: 270px;
+    min-width: 250px;
+    border: 2px solid red;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* .recoCardContainer .cardImage>img{
+    height: 100%;
+} */
+
+.recoCardContainer>img{
+    height: 100%;
+    width: 100%;
+    transform: scale(1.2);
+}
+
+.recoCardContainer .cardDetails{
+    position: relative;
+    top: -80px;
+    background-color: transparent;
+    height: 20%;
+    display: grid;
+    grid-template-areas: 
+    'a b'
+    'c d';
+    grid-template-columns: 150px 1fr;
+}
+
+.recoCardContainer .cardDetails .eventName{
+    grid-area: a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+.recoCardContainer .cardDetails .eventDate{
+    grid-area: b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: small;
+    color: rgba(245, 245, 245, 0.853);
+    padding-top: 3px;
+}
+.recoCardContainer .cardDetails .eventLoc{
+    grid-area: c;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.recoCardContainer .cardDetails .others{
+    grid-area: d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: small;
+    color: rgba(245, 245, 245, 0.853);
+    padding-top: 3px;
+}
+
+
