@@ -34,6 +34,7 @@ const Upbar = () => {
         if(window.screen.width<=850){
             // setLargeScreen(false)
             // setSearchActive(false)
+            inputRef.current.blur()
             setSearchActive(false)
             // setTimeout(() => {
             // }, 500);
@@ -45,8 +46,15 @@ const Upbar = () => {
         setTimeout(() => {
             inputRef.current.focus()
         },200);
+        // handleFocus()
         setSearchActive(true)
     };
+    // const handleFocus = () => {
+    //     if(searchActive==true && window.screen.width<=850){
+    //         inputRef.current.focus();
+    //     }
+    // };
+
 
     useEffect(()=>{
         if(window.screen.width<=850){

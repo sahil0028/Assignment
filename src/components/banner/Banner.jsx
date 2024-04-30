@@ -5,6 +5,8 @@ import Recocard from './Recocard'
 
 const Banner = () => {
     const [recoShows,setRecoShows] = useState({})
+    const [loading,setLoading] = useState(false)
+
     useEffect(()=>{
         axios.get('https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&type=reco&page=5').then((response)=>{
             setRecoShows(response.data)
