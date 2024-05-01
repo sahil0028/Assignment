@@ -57,6 +57,11 @@
     width: 100%;
     transform: scale(1.2);
 }
+.recoCardContainer>.lazyImg{
+    height: 100%;
+    width: 100%;
+    transform: scale(1.2);
+}
 
 .recoCardContainer .cardDetails{
     position: relative;

@@ -2,9 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './navbar.css'
 import { FaBars } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
-import { CiSearch } from "react-icons/ci";
 import { FaSearch } from "react-icons/fa";
-import { SiTrueup } from 'react-icons/si';
 import { FaUser } from "react-icons/fa";
 
 
@@ -12,9 +10,6 @@ const Upbar = () => {
     const [searchActive,setSearchActive] = useState(true)
     const [largeScreen,setLargeScreen] = useState(true)
 
-    // useEffect(()=>{
-    //     console.log(window.screen.width)
-    // },[window.screen.innerwidth])
     window.onresize = resize;
 
     function resize()
@@ -31,26 +26,21 @@ const Upbar = () => {
         }
     }
     const handeBlur=()=>{
-        if(window.screen.width<=850){
-            // setLargeScreen(false)
-            // setSearchActive(false)
+        if(window.screen.width<=850 && searchActive){
             inputRef.current.blur()
             setSearchActive(false)
-            // setTimeout(() => {
-            // }, 500);
         }
     }
     
     const inputRef = useRef(null);
     const handleClick = () => {
+        setSearchActive(prev=>!prev)
         setTimeout(() => {
             inputRef.current.focus()
-        },200);
-        // handleFocus()
-        setSearchActive(true)
+        },1000);
     };
     // const handleFocus = () => {
-    //     if(searchActive==true && window.screen.width<=850){
+    //     if(window.screen.width<=850){
     //         inputRef.current.focus();
     //     }
     // };
@@ -75,7 +65,7 @@ const Upbar = () => {
                 <span>Categories</span>
             </div>
             <div className="search-box">
-                <input ref={inputRef} onBlur={handeBlur} type="text" id='input-search' className={`input-search search${searchActive}`} placeholder="Type to Search..." />
+                <input ref={inputRef} onBlur={handeBlur} type="text" className={`input-search search${searchActive}`} placeholder="Type to Search..." />
                 <button onMouseUp={handleClick}  className={`btn-search search${searchActive} lg-${largeScreen}` }>
                     <FaSearch />
                 </button>
