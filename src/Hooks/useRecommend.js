@@ -2,7 +2,6 @@ import axios from 'axios'
 import {useEffect, useState} from 'react'
 
 export default function useRecommend(pageNo) {
-    console.log('use reco')
     const [recoShows,setRecoShows] = useState([])
     const [loading,setLoading] = useState(true)
     const [error ,setError] = useState(false)
@@ -17,7 +16,6 @@ export default function useRecommend(pageNo) {
                 return [...prevShows,...response.data.events]
             });
             setLoading(false)
-            console.log(response.data);
         }).catch((error) => {
             setError(true)
             console.error("Error occured in recommended shows", error);

@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import { FaLocationDot } from 'react-icons/fa6';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Upshowcard = ({show,lastShowRef}) => {
 
     const [imgLink,setImgLink]= useState('')
-    // console.log('in up card-',show)
     
     function extractImageId() {
       const pattern = /\/d\/(.*?)\/view/;
       const match = show.imgUrl.match(pattern);
       if (match) {
-          // console.log(match[1])
           setImgLink(match[1])
-      //   return match[1];
       } else {
       //   return null;
       }
@@ -32,8 +30,8 @@ const Upshowcard = ({show,lastShowRef}) => {
       </div>
       <div className="details">
         <div className="eventName">{show.eventName}</div>
-        <div className="eventLoc">{show.cityName}</div>
-        <div className="others">{show.weather}I{show.distanceKm[0]+show.distanceKm[1]+'km'}</div>
+        <div className="eventLoc"><FaLocationDot />{show.cityName}</div>
+        <div className="others">{show.weather}<span>|</span>{show.distanceKm[0]+show.distanceKm[1]+'km'}</div>
       </div>
     </div>
   )

@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: calc(100vh - 250px);
+    min-height: 570px;
     color: white;
     text-align: center;
 }
@@ -34,6 +35,33 @@
 
 .bannerContainer .recommendation .shows::-webkit-scrollbar {
     display: none;
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .bannerContainer .backgroundImg .heading{
+        padding: 5% 5% 0 5%;
+        font-size: 60px;
+    }
+ }
+ 
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    .bannerContainer .backgroundImg .heading{
+        padding: 5% 5% 0 5%;
+        font-size: 325%;
+    }
+}
+ 
+@media all and (min-width: 400px) and (max-width: 480px) {
+    .bannerContainer .backgroundImg .heading{
+        padding: 5% 5% 0 5%;
+        font-size: 45px;
+    }
+}
+@media all and (max-width: 400px) {
+    .bannerContainer .backgroundImg .heading{
+        padding: 5% 5% 0 5%;
+        font-size: 35px;
+    }
 }
 
 
@@ -69,6 +97,7 @@
     'a b'
     'c d';
     grid-template-columns: 150px 1fr;
+    padding: 0 8px;
 }
 
 .recoCardContainer .cardDetails .eventName{
@@ -94,6 +123,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    
 }
 .recoCardContainer .cardDetails .others{
     grid-area: d;
@@ -103,6 +133,10 @@
     font-size: small;
     color: rgba(245, 245, 245, 0.853);
     padding-top: 3px;
+}
+.recoCardContainer .cardDetails .others>span{
+    padding: 0 5px;
+    font-weight: 800;
 }
 
 .loading{

@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     min-height: 70px;
-    background-color: pink;
+    background-color: var(--background);
     padding: 0 2rem;
 }
 
@@ -60,31 +60,16 @@
     50%{width: 50%;}
     100% {width: 100%;}
 }
-/* new */
 
 .search + .searchbutton {
 	transition-duration: 0.4s;
 	-moz-transition-duration: 0.4s;
 	-webkit-transition-duration: 0.4s;
 	-o-transition-duration: 0.4s;
-	/* background-color: white; */
 	color: var(--subtitle);
 }
 
 .search {
-	/* position: relative; */
-	/* left: 49px; Button width-1px (Not 50px/100% because that will sometimes show a 1px line between the search box and button) */
-	/* background-color: white; */
-	/* outline: none;
-	border: none;
-	padding: 0;
-	width: 0;
-	height: 100%;
-	z-index: 10;
-	transition-duration: 0.4s;
-	-moz-transition-duration: 0.4s;
-	-webkit-transition-duration: 0.4s;
-	-o-transition-duration: 0.4s; */
 
     width: 20px;
     border-style: none;
@@ -98,13 +83,13 @@
 }
 
 .search {
-	width: 100%; /* Bar width+1px */
+	width: 100%; 
 	padding: 0 16px 0 0;
 }
 
 .expandright {
 	left: auto;
-	right: 49px; /* Button width-1px */
+	right: 49px; 
 }
 
 .expandright {
@@ -114,7 +99,6 @@
 @media all and (min-width: 480px) and (max-width: 768px) {
     .search:focus + .searchbutton {
         color: black;
-        /* animation: fade-out 0.5 forwards; */
     }
     
     .search {
@@ -134,8 +118,6 @@
     }
     
     .search:focus {
-        /* width: 100%;  */
-        /* Bar width+1px */
         padding: 0 16px 0 0;
         animation: fade-out 0.1s forwards;
 
@@ -144,7 +126,6 @@
     .expandright {
         left: auto;
         right: 49px;
-         /* Button width-1px */
     }
     
     .expandright:focus {
@@ -158,7 +139,6 @@
     }
     
     .search {
-        /* position: relative; */
         left: 15px;
         transition-duration: 0.4s;
         -moz-transition-duration: 0.4s;
@@ -193,69 +173,6 @@
     
 }
 
-/* new end */
-
-/* .input-search.searchfalse{
-    animation: fade-in 0.5s backwards; 
-    display: none;
-}
-
-.input-search::placeholder{
-    color:rgba(53, 48, 48, 0.5);
-    letter-spacing: 2px;
-    font-weight: 100;
-}
-.btn-search{
-    border-style: none;
-    font-weight: bold;
-    outline: none;
-    cursor: pointer;
-    border-radius: 50%;
-    right: 0px;
-    color: var(--subtitle);
-    background-color:transparent;
-    pointer-events: painted;  
-}
-
-.btn-search.lg-true{
-    pointer-events: none;
-}
-
-
-.btn-search.searchfalse ~ .input-search{
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-    animation: fade-in 0.5s backwards;
-    display: none;
-}
-.btn-search.searchfalse.lg-false ~ .input-search:focus{
-    width: 20px;
-    border-style: none;
-    font-size: 18px;
-    letter-spacing: 2px;
-    outline: none;
-    border-radius: 25px;
-    background-color: transparent;
-    padding-right: 40px;
-    padding-left: 5px;
-    animation: fade-out 0.1s forwards;
-}
-.input-search.searchfalse{
-    animation: fade-in 0.5s backwards;
-    display: none;
-}
-.input-search.searchfalse{
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-    display: none;
-}
-@keyframes fade-in{
-    0%{
-        width: 100%;
-    }
-    50%{width: 50%;}
-    100% {
-        width: 0%;
-    }
-} */
 .upBarContainer .right{
     font-weight: 600;
     display: flex;
@@ -278,7 +195,6 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    /* font-size: 16px; */
     font-weight: 600;
 }
 .upBarContainer .right .signin>button.smll{
@@ -293,7 +209,6 @@
 
 @media all and (min-width: 480px) and (max-width: 768px) {
     .upBarContainer .middle{
-        /* display: flex; */
         flex: 1;
         justify-content: flex-end;
     }
@@ -371,7 +286,7 @@
 /* Bottombar css */
 
 .bottomBarContainer{
-    background-color: pink;
+    /* background-color: pink; */
     height: 60px; 
     display: flex;
     align-items: center;
@@ -416,26 +331,17 @@
  
 @media all and (min-width: 480px) and (max-width: 768px) { 
     .bottomBarContainer{
-        background-color: pink;
+        /* background-color: pink; */
         height: 60px; 
         display: flex;
         align-items: start !important;
         /* justify-content: start; */
         padding: 0 2rem;
         flex-direction: column;
+        gap: 8px;
     }
     .bottomBarContainer .offers .offer{
-        /* text-overflow:ellipsis;
-        text-wrap: nowrap; */
         white-space: nowrap;
-    }
-    .bottomBarContainer{
-        background-color: pink;
-        height: 60px; 
-        display: flex;
-        align-items: center;
-        /* justify-content: center; */
-        padding: 0 2rem;
     }
     
     .bottomBarContainer .location {
@@ -474,26 +380,16 @@
  
 @media all and (max-width: 480px) { 
     .bottomBarContainer{
-        background-color: pink;
         height: 60px; 
         display: flex;
         align-items: start;
-        /* justify-content: start; */
         padding: 0 2rem;
+        gap: 8px;
         flex-direction: column;
     }
     .bottomBarContainer .offers .offer{
-        /* text-overflow:ellipsis;
-        text-wrap: nowrap; */
         white-space: nowrap;
     }
-    /* .bottomBarContainer{
-        background-color: pink;
-        height: 60px; 
-        display: flex;
-        align-items: center;
-        padding: 0 2rem;
-    } */
     
     .bottomBarContainer .location {
         display: flex;

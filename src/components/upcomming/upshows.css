@@ -75,6 +75,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     width: 90%;
+    gap: 5px;
     /* height: 20%; */
 }
 
@@ -88,12 +89,28 @@
     overflow: hidden;
 }
 
-.eventLoc{
+.upcomCardContainer .details .eventLoc{
     grid-area: b;
+    display: flex;
+    gap: 3px;
+    color: var(--subtitle);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
-.others{
+.upcomCardContainer .details .others{
     grid-area: c;
+    color: var(--subtitle);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
+.upcomCardContainer .details .others>span{
+    padding: 0 5px;
+    font-weight: 800;
+}
+
+
 
 .loading{
     display: flex;
