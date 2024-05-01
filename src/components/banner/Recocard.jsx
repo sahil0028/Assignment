@@ -28,14 +28,14 @@ const Recocard = (props) => {
   return (
     <div ref={props.lastShowRef} className='recoCardContainer'>
         {/* <div className="cardImage"><img src={show.imgUrl} alt="" /></div> */}
-        {/* <LazyLoadImage className='lazyImg' src={imgLink.length>0?'https://drive.google.com/thumbnail?id='+imgLink:''}
+        <LazyLoadImage className='lazyImg' src={imgLink.length>0?'https://drive.google.com/thumbnail?id='+imgLink:''}
           width={'100%'} height={'100%'}
           // transform={'scale(1.2)'}
           style={{transform:'scale(1.2)'}}
           effect='blur'
           alt="Image Alt"
-        /> */}
-        <img loading="lazy" src={imgLink.length>0?'https://drive.google.com/thumbnail?id='+imgLink:''} alt="" />
+        />
+        {/* <img loading="lazy" src={imgLink.length>0?'https://drive.google.com/thumbnail?id='+imgLink:''} alt="" /> */}
         <div className="cardDetails">
             {/* <div className="eventName">a</div>
             <div className="eventDate">b</div>

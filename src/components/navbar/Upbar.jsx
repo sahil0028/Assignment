@@ -65,8 +65,8 @@ const Upbar = () => {
                 <span>Categories</span>
             </div>
             <div className="search-box">
-                <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search" />
-                <label class="button searchbutton" for="searchright"><span class="mglass"><FaSearch /></span></label>
+                <input className="search expandright" id="searchright" type="search" name="q" placeholder="Search" />
+                <label className="button searchbutton" htmlFor="searchright"><span className="mglass"><FaSearch /></span></label>
             </div>
         </div>
         <div className="right">

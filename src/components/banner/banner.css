@@ -48,10 +48,6 @@
     overflow: hidden;
 }
 
-/* .recoCardContainer .cardImage>img{
-    height: 100%;
-} */
-
 .recoCardContainer>img{
     height: 100%;
     width: 100%;
@@ -109,4 +105,8 @@
     padding-top: 3px;
 }
 
-
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

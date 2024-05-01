@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./banner.css";
-import axios from "axios";
 import Recocard from "./Recocard";
 import useRecommend from "../../Hooks/useRecommend";
+import { ClipLoader } from "react-spinners";
 
 const Banner = () => {
   // const [recoShows, setRecoShows] = useState({});
@@ -26,16 +26,6 @@ const Banner = () => {
     },
     [loading]
   );
-  useEffect(()=>{
-    console.log('in reco shows')
-    console.log(recoShows)
-
-  },[recoShows])
-
-  // const fetchData=()=>{
-  //   console.log(recoShows)
-  //   console.log(recoShows.events)
-  //   }
   return (
     <div className="bannerContainer">
       <div className="backgroundImg">
@@ -66,8 +56,9 @@ const Banner = () => {
             }
           })
         }
+        <div className="loading">{loading && <ClipLoader loading={loading} color="black" />}</div>
+        <div className="loading">{error && 'Error Occured'}</div>
         </div>
-        {loading?'loading':''}
       </div>
     </div>
   );
