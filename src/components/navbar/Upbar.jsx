@@ -35,9 +35,9 @@ const Upbar = () => {
     const inputRef = useRef(null);
     const handleClick = () => {
         setSearchActive(prev=>!prev)
-        setTimeout(() => {
-            inputRef.current.focus()
-        },1000);
+        // setTimeout(() => {
+        // },1000);
+        inputRef.current.focus()
     };
     // const handleFocus = () => {
     //     if(window.screen.width<=850){
@@ -58,17 +58,15 @@ const Upbar = () => {
     },[])
   return (
     <div className='upBarContainer'>
-        <div className={`left search${searchActive}`}>BookUsNow</div>
+        <div className={`left`}>BookUsNow</div>
         <div className="middle">
             <div className="categories">
                 <FaBars />
                 <span>Categories</span>
             </div>
             <div className="search-box">
-                <input ref={inputRef} onBlur={handeBlur} type="text" className={`input-search search${searchActive}`} placeholder="Type to Search..." />
-                <button onMouseUp={handleClick}  className={`btn-search search${searchActive} lg-${largeScreen}` }>
-                    <FaSearch />
-                </button>
+                <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search" />
+                <label class="button searchbutton" for="searchright"><span class="mglass"><FaSearch /></span></label>
             </div>
         </div>
         <div className="right">
