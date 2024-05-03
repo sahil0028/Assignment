@@ -7,16 +7,19 @@ import { FaUser } from "react-icons/fa";
 
 
 const Upbar = () => {
-    // useEffect(()=>{
-    //     if(window.screen.width<=850){
-    //         setLargeScreen(false)
-    //         setSearchActive(false)
-    //     }
-    //     else{
-    //         setLargeScreen(true)
-    //         setSearchActive(true)
-    //     }
-    // },[])
+    const [login,setlogin] = useState(false)
+    const handleLogout=()=>{
+        sessionStorage.clear()
+        setlogin(false)
+    }
+    useEffect(()=>{
+        if(sessionStorage.getItem('token')){
+            setlogin(true)
+        }
+        else{
+            setlogin(false)
+        }
+    },[])
   return (
     <div className='upBarContainer'>
         <div className={`left`}>BookUsNow</div>
@@ -32,7 +35,7 @@ const Upbar = () => {
         </div>
         <div className="right">
             <div className="favorites"> <FaHeart /><span>Favorites</span></div>
-            <div className="signin"><button className='lg'>Sign In</button> <button className='smll'><FaUser /></button> </div>
+            <div className="signin"> {login?<button className='lg' onClick={handleLogout}>Log Out</button>:<button className='lg'>Sign In</button>}<button className='smll'><FaUser /></button> </div>
         </div>
     </div>
   )

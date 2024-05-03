@@ -131,6 +131,9 @@
     .expandright:focus {
         padding: 0 0 0 16px;
     }
+    .search-box .searchbutton{
+        margin-bottom: -5px;
+    }
 }
 
 @media all and (max-width: 480px) { 
@@ -168,6 +171,9 @@
     
     .expandright:focus {
         padding: 0 0 0 16px;
+    }
+    .search-box .searchbutton{
+        margin-bottom: -5px;
     }
 
     

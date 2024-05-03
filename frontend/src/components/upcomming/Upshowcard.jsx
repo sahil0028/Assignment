@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaLocationDot } from 'react-icons/fa6';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import moment from 'moment';
 
 const Upshowcard = ({show,lastShowRef}) => {
 
@@ -18,6 +19,11 @@ const Upshowcard = ({show,lastShowRef}) => {
     useEffect(()=>{
         extractImageId()
     },[])
+
+    const getDate=(date)=>{
+      return moment(date).format("MMMM DD, YYYY")
+    }
+
   return (
     <div ref={lastShowRef} className='upcomCardContainer'>
       <div className="imgContainer">
@@ -26,7 +32,7 @@ const Upshowcard = ({show,lastShowRef}) => {
           effect='blur'
           alt="Image Alt"
         />
-        <div className="eventDate">{show.date}</div>
+        <div className="eventDate">{getDate(show.date)}</div>
       </div>
       <div className="details">
         <div className="eventName">{show.eventName}</div>

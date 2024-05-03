@@ -9,8 +9,17 @@
 }
 
 .upcomShows .heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.upcomShows .heading .title{
     font-size: x-large;
     font-weight: 600;
+}
+.upcomShows .heading .allLink{
+    padding-right: 8px;
+    text-decoration: underline;
 }
 
 .upcomShows .shows{
@@ -118,4 +127,21 @@
     align-items: center;
 }
 
+@media all and (max-width: 480px) { 
+    .upcomShows .shows{
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(.5rem, 5vw, 3rem);
+        align-items: center;
+        justify-content: flex-start;
+        margin: auto;
+        max-width: 90vw;
+        margin-inline: auto;
+        border-radius: 10px;
+        scroll-snap-type: x mandatory;
+    }
+    .upcomShows .shows .upcomCardContainer{
+        margin-left: 3%;
+    }
+}
 

@@ -28,7 +28,9 @@ const Upcomshows = () => {
 
   return (
     <div className='upcomShows'>
-        <div className="heading">Upcomming Shows ➡</div>
+        <div className="heading">
+          <span className="title">Upcomming Shows ➡ </span><span className='allLink'>See all</span>
+        </div>
         <div className="shows">
             {
                 upShows?.map((show,id)=>{

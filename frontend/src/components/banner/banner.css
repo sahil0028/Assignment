@@ -25,6 +25,20 @@
     padding-left: 7%;
 }
 
+.bannerContainer .recommendation .heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* .bannerContainer .recommendation .heading {
+    font-size: x-large;
+    font-weight: 600;
+} */
+.bannerContainer .recommendation .heading .allLink{
+    padding-right: 12px;
+    text-decoration: underline;
+}
+
 .bannerContainer .recommendation .shows{
     display: flex;
     gap: 2rem;
@@ -71,7 +85,7 @@
     margin-top: 2rem;
     min-height: 270px;
     min-width: 250px;
-    border: 2px solid red;
+    border: 2px solid var(--bordercolor);
     border-radius: 8px;
     overflow: hidden;
 }

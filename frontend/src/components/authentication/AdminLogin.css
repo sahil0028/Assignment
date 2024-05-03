@@ -1,0 +1,325 @@
+/* height: "100vh",
+    backgroundImage: `url(${loginWallpaper})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    textAlign:'center',
+    display:'grid',
+    alignItems:'center', */
+
+/* .spintrue{
+    opacity: 0.5;
+    pointer-events: none;
+} */
+
+.wholeALogin{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* background-color: black; */
+}
+
+.login_Left{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url('../../assets/lPage.jpg'); */
+    /* background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: grid;
+    align-content: center;
+    color: #fff;
+    image-rendering: pixelated; */
+}
+.login_Left .login_left_animation{
+    height: max-content;
+}
+
+.login_Right{
+    background-color: #fff;
+    border-radius: 25px 0 0 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    padding-left: 10%;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+.login_Right>.title{
+    margin-bottom: 25px;
+}
+
+.login_Right .title>h2{
+    color: black;
+    font-weight: bolder;
+}
+
+.login_Right .title>small{
+    color: darkgrey;
+}
+
+form>label{
+    font-weight: bold;
+}
+
+form>input{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input:focus{
+    outline-color: #4CAF50;
+}
+
+input[type=button] {
+    width: 80%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+@media all and (max-width: 480px) { 
+    .wholeALogin{
+        display: block;
+    }
+    .wholeALogin>.login_Left{
+        display: none;
+    }
+    .wholeALogin>.login_Right{
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+/* Dashboard CSS */
+
+.dashboardContainer{
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+            "e e" 
+            "a b"
+            "c d";
+    align-content: center;
+    justify-content: center;
+}
+
+.dashboardContainer .heading{
+    grid-area: e;
+}
+
+.dashboardItems{
+    height: 250px;
+    width: 250px;
+    margin: 40px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    /* background-color: red; */
+}
+
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+  .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+.dashboardContainer>.TAdminSVG{
+    grid-area: a;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.dashboardContainer>.TAdminSVG>img{
+    margin-top: 5px;
+    height: 85%;
+    width: 100%;
+}
+
+.dashboardContainer>.TStudentSVG{
+    grid-area: b;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.dashboardContainer>.TStudentSVG>img{
+    height: 85%;
+    width: 100%;
+}
+
+.dashboardContainer>.TJobsSVG{
+    grid-area: c;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.dashboardContainer>.TJobsSVG>img{
+    margin-top: 5px;
+    height: 85%;
+    width: 100%;
+}
+
+.dashboardContainer>.TCompaniesSVG{
+    grid-area: d;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.dashboardContainer>.TCompaniesSVG>img{
+    margin-top: 5px;
+    height: 85%;
+    width: 100%;
+}
+
+@media all and (min-width: 1024px) and (max-width: 1200px) {}
+@media all and (min-width: 768px) and (max-width: 1024px) {}
+@media all and (min-width: 480px) and (max-width: 768px) {}
+
+@media all and (max-width: 480px) { 
+    .dashboardContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dashboardItems{
+        height: 250px;
+        width: 90%;
+        margin: 40px;
+        text-align: center;
+        font-size: large;
+        font-weight: bold;
+        cursor: pointer;
+        /* background-color: red; */
+    }
+}
+  
+/* Manage Student Css */
+
+.Manage_students{
+    /* width: 80%; */
+    width: 100%;
+    margin-left: 2rem;
+    overflow-x: hidden;
+}
+
+.Manage_students .heading>h1{
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bolder;
+    font-style: italic;
+}
+/* ----------------------------- */
+
+/* .students_data{
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+} */
+
+.Student_table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+  
+.Student_table td,.Student_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+.Student_table tr:nth-child(even){background-color: #f2f2f2;}
+  
+.Student_table tr:hover {background-color: #ddd;}
+  
+.Student_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+@media all and (min-width: 1024px) and (max-width: 1200px) {}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+
+}
+@media all and (min-width: 480px) and (max-width: 768px) {}
+
+@media all and (max-width: 480px) {
+    .Manage_students{
+        /* width: 80%; */
+        width: 100%;
+        margin-left: 2rem;
+        margin-right: 0rem;
+        overflow-x: hidden;
+    }
+}
+
+/* Manage Companies css */
+
+.Manage_Company{
+    width: 100%;
+    margin-left: 2rem;
+}
+
+.Manage_Company .heading>h1{
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.Companies_data{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
+    
+}
+
+
+
+@media all and (max-width: 480px) { 
+    .mobileForm{
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+}
+
+
+
+

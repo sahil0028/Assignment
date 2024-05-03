@@ -11,6 +11,10 @@ const Banner = () => {
   const [pageNo,setPageNo] = useState(1)
   const {recoShows,loading,error} = useRecommend(pageNo)
 
+  // const style={
+  //   color:'red',
+  // }
+
   const observer = useRef();
 
   const lastShowRef = useCallback(
@@ -39,7 +43,7 @@ const Banner = () => {
         </div>
       </div>
       <div className="recommendation">
-        <div className="heading">Recommended Shows ➡</div>
+        <div className="heading"><span className="title">Recommended Shows ➡ </span><span className='allLink'>See all</span></div>
         <div className="shows">
           {recoShows?.map((show, id) => {
             if (recoShows.length === id + 1) {
@@ -56,7 +60,7 @@ const Banner = () => {
             }
           })
         }
-        <div className="loading">{loading && <ClipLoader loading={loading} color="black" />}</div>
+        <div className="loading" style={{marginTop:'15px'}}>{loading && <ClipLoader loading={loading} color="red" />}</div>
         <div className="loading">{error && 'Error Occured'}</div>
         </div>
       </div>
